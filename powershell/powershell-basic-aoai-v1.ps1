@@ -1,10 +1,12 @@
 <#
 Minimal Azure OpenAI Responses API (v1 preview) PowerShell sample.
-Prereqs (set these env vars before running):
+Prereqs (set env vars before running)
+These may be set in your PowerShell profile (echo $PROFILE to find it):
     $env:AZURE_OPENAI_API_KEY
     $env:AZURE_OPENAI_V1_API_ENDPOINT  (e.g. https://your-resource.openai.azure.com/openai/v1)
     $env:AZURE_OPENAI_API_MODEL        (e.g. gpt-4.1-mini)
 #>
+
 
 param([string]$Prompt = "Tell me a joke.")
 
