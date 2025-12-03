@@ -17,7 +17,7 @@ response = client.responses.create(
                 { "type": "input_text", "text": "Describe this image" },
                 {
                     "type": "input_image",
-                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Wanzijia.jpg"
+                    "image_url": "https://learn.microsoft.com/azure/well-architected/ai/images/responsible-ai.png"
                 }
             ]
         }
