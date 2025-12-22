@@ -1,5 +1,5 @@
 # Responses API on Azure OpenAI samples
-Originally launched by OpenAI and now natively supported in Azure AI Foundry, the Responses API combines the simplicity of the Chat Completions API with the advanced tool-calling capabilities of the legacy Assistants API. It offers a streamlined way to build powerful agentic experiences by allowing developers to structure prompts, invoke tools, and manage outputs - all within a single API call.
+Originally launched by OpenAI and now natively supported in Microsoft Foundry, the Responses API combines the simplicity of the Chat Completions API with the advanced tool-calling capabilities of the legacy Assistants API. It offers a streamlined way to build powerful agentic experiences by allowing developers to structure prompts, invoke tools, and manage outputs - all within a single API call.
 
 This repo includes a selection of minimal Python samples covering the most of the common features of Responses API on Azure OpenAI:
 
@@ -50,7 +50,7 @@ Code samples have been provided for both the v1 API (now GA for Responses API), 
 If you want the latest features, I would recommend using the v1 API. With the GA release, you no longer need to specify an api-version parameter.
 If you need to use the older API versions, you can use the legacy samples. At time of writing, the latest GA API release is `2024-10-21`.
 
-[Azure OpenAI in Azure AI Foundry Models API lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-lifecycle?tabs=key#api-evolution)
+[Azure OpenAI in Foundry Models API lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-lifecycle?tabs=key#api-evolution)
 
 
 ## Microsoft Agent Framework
@@ -97,4 +97,4 @@ Claude models (Sonnet 4.5, Haiku 4.5, Opus 4.1) hosted in Microsoft Foundry can 
 - [OpenAI documentation](https://platform.openai.com/docs/api-reference/responses/create)
 
 ## Attribution and thanks
-These examples are loosely based on [@mrbullwinkle's](https://github.com/mrbullwinkle) samples from the [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses), and also helped by the [documentation from OpenAI](https://platform.openai.com/docs/api-reference/responses/create). Thanks to [@moonbox3](https://github.com/moonbox3) for providing the Semantic Kernel and Microsoft Agent Framework samples. Thanks to Rafal Rutyna for providing useful information on the May 2025 updates.
+Many of these examples are loosely based on [@mrbullwinkle's](https://github.com/mrbullwinkle) samples from the [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses), and also helped by the [documentation from OpenAI](https://platform.openai.com/docs/api-reference/responses/create). Thanks to [@moonbox3](https://github.com/moonbox3) for providing the Semantic Kernel and Microsoft Agent Framework samples. Thanks to Rafal Rutyna for providing useful information on the May 2025 updates.
