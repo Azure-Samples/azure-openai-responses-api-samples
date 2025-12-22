@@ -52,20 +52,24 @@ If you need to use the older API versions, you can use the legacy samples. At ti
 
 [Azure OpenAI in Azure AI Foundry Models API lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-lifecycle?tabs=key#api-evolution)
 
-## Microsoft Agent Framework and Semantic Kernel
+
+## Microsoft Agent Framework
 [Microsoft Agent Framework](https://aka.ms/agentframework) has supported Responses API for both Azure OpenAI and OpenAI since the initial public preview on 1st October 2025 (version 1.0.0b251001). The following Azure OpenAI samples provide code for image analysis, function calling, conversation threads, and code interpreter.
 
 [Azure OpenAI Agent Examples](https://github.com/microsoft/agent-framework/tree/main/python/samples/getting_started/agents/azure_openai)
 
+
+ ## Semantic Kernel
 As of 1.27, Semantic Kernel supports Responses API for both Azure OpenAI and OpenAI. The following samples provide examples for conversation history, plugins, Web Search (currently OpenAI only), File Search, vision, and Structured Outputs.
 
 [Getting started with Responses API in Semantic Kernel](https://github.com/microsoft/semantic-kernel/tree/main/python/samples/getting_started_with_agents/openai_responses)
 
 
-## Using Responses API via the Microsoft Foundry SDKs Azure AI Projects client library (v2)
-The AI Projects client library (in preview) is part of the Microsoft Foundry SDK, and provides easy access to resources in your Microsoft Foundry Project. Use the `.get_openai_client()` method to run Responses, Conversations, Evals and FineTuning operations with your Agent.
+## Microsoft Foundry SDKs Azure AI Projects client library (v2 Preview), and Foundry Agent Service (v2 Preview)
+The AI Projects client library is part of the Microsoft Foundry SDK, and supports Responses API via the `openai` client. Use the `.get_openai_client()` method to run Responses, Conversations, Evals and FineTuning operations with your Agent. Since November 2025, Foundry Agent Service now uses Responses API by default, via the Azure AI Projects client library. (Previously, Azure AI Agent Service depended on Assistants API).
 
 [Foundry SDK Overview](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-projects-readme?view=azure-python-preview) [Samples](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples/responses)
+
 
 ## Recommended settings
 
