@@ -62,6 +62,11 @@ As of 1.27, Semantic Kernel supports Responses API for both Azure OpenAI and Ope
 [Getting started with Responses API in Semantic Kernel](https://github.com/microsoft/semantic-kernel/tree/main/python/samples/getting_started_with_agents/openai_responses)
 
 
+## Using Responses API via the Microsoft Foundry SDKs Azure AI Projects client library (v2)
+The AI Projects client library (in preview) is part of the Microsoft Foundry SDK, and provides easy access to resources in your Microsoft Foundry Project. Use the `.get_openai_client()` method to run Responses, Conversations, Evals and FineTuning operations with your Agent.
+
+[Foundry SDK Overview](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-projects-readme?view=azure-python-preview) [Samples](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples/responses)
+
 ## Recommended settings
 
 If you're coming to this for the first time, and want some suggestions for the most compatible/simplest way to try out the latest features, try the following:
@@ -71,8 +76,7 @@ If you're coming to this for the first time, and want some suggestions for the m
 - Deployment: Global Standard
 - API version: v1 (GA)
 - If using the "Legacy" API version: 2025-04-01-preview
-- OpenAI library 1.99.2 or above (ideally the latest stable release)
-- Semantic Kernel 1.36.1 or above (ideally the latest stable release)
+- OpenAI library (latest stable release)
 
 [![Reasoning Summary](https://github.com/user-attachments/assets/9e1ab1b8-8c3d-4ccf-911e-3c7711abe947)](python/responses-conversation-stream-gradio.py)
 
