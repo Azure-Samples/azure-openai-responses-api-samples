@@ -1,5 +1,5 @@
 # Responses API on Azure OpenAI samples
-Originally launched by OpenAI and now natively supported in Azure AI Foundry, the Responses API combines the simplicity of the Chat Completions API with the advanced tool-calling capabilities of the legacy Assistants API. It offers a streamlined way to build powerful agentic experiences by allowing developers to structure prompts, invoke tools, and manage outputs - all within a single API call.
+Originally launched by OpenAI and now natively supported in Microsoft Foundry, the Responses API combines the simplicity of the Chat Completions API with the advanced tool-calling capabilities of the legacy Assistants API. It offers a streamlined way to build powerful agentic experiences by allowing developers to structure prompts, invoke tools, and manage outputs - all within a single API call.
 
 This repo includes a selection of minimal Python samples covering the most of the common features of Responses API on Azure OpenAI:
 
@@ -50,16 +50,25 @@ Code samples have been provided for both the v1 API (now GA for Responses API), 
 If you want the latest features, I would recommend using the v1 API. With the GA release, you no longer need to specify an api-version parameter.
 If you need to use the older API versions, you can use the legacy samples. At time of writing, the latest GA API release is `2024-10-21`.
 
-[Azure OpenAI in Azure AI Foundry Models API lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-lifecycle?tabs=key#api-evolution)
+[Azure OpenAI in Foundry Models API lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-lifecycle?tabs=key#api-evolution)
 
-## Microsoft Agent Framework and Semantic Kernel
+
+## Microsoft Agent Framework
 [Microsoft Agent Framework](https://aka.ms/agentframework) has supported Responses API for both Azure OpenAI and OpenAI since the initial public preview on 1st October 2025 (version 1.0.0b251001). The following Azure OpenAI samples provide code for image analysis, function calling, conversation threads, and code interpreter.
 
 [Azure OpenAI Agent Examples](https://github.com/microsoft/agent-framework/tree/main/python/samples/getting_started/agents/azure_openai)
 
+
+ ## Semantic Kernel
 As of 1.27, Semantic Kernel supports Responses API for both Azure OpenAI and OpenAI. The following samples provide examples for conversation history, plugins, Web Search (currently OpenAI only), File Search, vision, and Structured Outputs.
 
 [Getting started with Responses API in Semantic Kernel](https://github.com/microsoft/semantic-kernel/tree/main/python/samples/getting_started_with_agents/openai_responses)
+
+
+## Microsoft Foundry SDKs Azure AI Projects client library (v2 Preview), and Foundry Agent Service (v2 Preview)
+The AI Projects client library is part of the Microsoft Foundry SDK, and supports Responses API via the `openai` client. Use the `.get_openai_client()` method to run Responses, Conversations, Evals and FineTuning operations with your Agent. Since November 2025, Foundry Agent Service now uses Responses API by default, via the Azure AI Projects client library. (Previously, Azure AI Agent Service depended on Assistants API).
+
+[Foundry SDK Overview](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-projects-readme?view=azure-python-preview) [Samples](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples/responses)
 
 
 ## Recommended settings
@@ -71,8 +80,7 @@ If you're coming to this for the first time, and want some suggestions for the m
 - Deployment: Global Standard
 - API version: v1 (GA)
 - If using the "Legacy" API version: 2025-04-01-preview
-- OpenAI library 1.99.2 or above (ideally the latest stable release)
-- Semantic Kernel 1.36.1 or above (ideally the latest stable release)
+- OpenAI library (latest stable release)
 
 [![Reasoning Summary](https://github.com/user-attachments/assets/9e1ab1b8-8c3d-4ccf-911e-3c7711abe947)](python/responses-chat-stream-gradio.py)
 
@@ -89,4 +97,4 @@ Claude models (Sonnet 4.5, Haiku 4.5, Opus 4.1) hosted in Microsoft Foundry can 
 - [OpenAI documentation](https://platform.openai.com/docs/api-reference/responses/create)
 
 ## Attribution and thanks
-These examples are loosely based on [@mrbullwinkle's](https://github.com/mrbullwinkle) samples from the [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses), and also helped by the [documentation from OpenAI](https://platform.openai.com/docs/api-reference/responses/create). Thanks to [@moonbox3](https://github.com/moonbox3) for providing the Semantic Kernel and Microsoft Agent Framework samples. Thanks to Rafal Rutyna for providing useful information on the May 2025 updates.
+Many of these examples are loosely based on [@mrbullwinkle's](https://github.com/mrbullwinkle) samples from the [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses), and also helped by the [documentation from OpenAI](https://platform.openai.com/docs/api-reference/responses/create). Thanks to [@moonbox3](https://github.com/moonbox3) for providing the Semantic Kernel and Microsoft Agent Framework samples. Thanks to Rafal Rutyna for providing useful information on the May 2025 updates.
