@@ -83,11 +83,11 @@ If you're coming to this for the first time, and want some suggestions for the m
 - OpenAI library (latest stable release)
 
 [![Reasoning Summary](https://github.com/user-attachments/assets/9e1ab1b8-8c3d-4ccf-911e-3c7711abe947)](python/responses-chat-stream-gradio.py)
-
+<!--
 ## Use Claude Models with OpenAI Responses API in Microsoft Foundry
 
 Claude models (Sonnet 4.5, Haiku 4.5, Opus 4.1) hosted in Microsoft Foundry can now be accessed via Responses API in certain Azure regions. For more details and code samples, please see this [Azure Samples GitHub repo](https://github.com/Azure-Samples/claude-with-openai-responses).
-
+-->
 ## Further reading
 - [The Responses API in Azure AI Foundry is now generally available](https://techcommunity.microsoft.com/blog/azure-ai-services-blog/the-responses-api-in-azure-ai-foundry-is-now-generally-available/4446567)
 - [Introducing New Tools and Features in the Responses API in Azure AI Foundry](https://devblogs.microsoft.com/foundry/introducing-new-tools-and-features-in-the-responses-api-in-azure-ai-foundry/)
