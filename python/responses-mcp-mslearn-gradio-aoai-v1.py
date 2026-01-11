@@ -104,38 +104,60 @@ def clear_chat():
 def clear_textbox():
     return ""
 
+CUSTOM_CSS = """
+/* Make the overall app use the full viewport height and let inner flex items shrink/expand. */
+.gradio-container { height: 100vh; }
+
+/* Force the main layout to be a vertical flex stack. */
+#layout { height: 100%; display: flex; flex-direction: column; min-height: 0; }
+
+/* Let the chatbot area take remaining space and scroll internally. */
+#chatbot { flex: 1 1 auto; min-height: 0; }
+#chatbot [aria-label="chatbot conversation"] { height: 100%; overflow: auto; }
+
+/* Make the input box multi-line and allow the user to resize it vertically. */
+#msg textarea { resize: vertical !important; overflow: auto !important; min-height: 3.5rem; }
+"""
+
 # Build the Gradio Blocks interface for the chat demo
-with gr.Blocks(fill_height=True, fill_width=True) as demo:
-    # Header Markdown text for the demo UI, centered
-    if demo_title != "":
-        gr.Markdown(f"<h2 style='text-align: center;'>{demo_title}</h2>")
-    
-    # Chatbot component to display messages stored in a list of role-content dictionaries
-    chatbot = gr.Chatbot(type="messages", scale=1, render_markdown=True, sanitize_html=False)
-    
-    # State to maintain the conversation history between messages
-    state = gr.State([])
+with gr.Blocks(fill_height=True, fill_width=True, css=CUSTOM_CSS) as demo:
+    with gr.Column(elem_id="layout"):
+        # Header Markdown text for the demo UI, centered
+        if demo_title != "":
+            gr.Markdown(f"<h2 style='text-align: center;'>{demo_title}</h2>")
 
-    # Textbox for user input with a placeholder message
-    msg = gr.Textbox(show_label=False, placeholder="Type your message here and press Enter")
+        # Chatbot component to display messages stored in a list of role-content dictionaries
+        chatbot = gr.Chatbot(type="messages", render_markdown=True, sanitize_html=False, elem_id="chatbot")
 
-    # Row containing the Submit and Clear buttons
-    with gr.Row():
-        submit_btn = gr.Button("Submit")
-        clear_btn = gr.Button("Clear")
-    
-    # Bind the Textbox submit action to the stream processing function and clear the textbox after submission
-    msg.submit(fn=chat_stream, inputs=[msg, state], outputs=[chatbot, state]).then(
-        clear_textbox, None, msg
-    )
-    
-    # Also bind the submit button to the same functionality as the Textbox submit
-    submit_btn.click(fn=chat_stream, inputs=[msg, state], outputs=[chatbot, state]).then(
-        clear_textbox, None, msg
-    )
-    
-    # Bind the clear button to reset the chat and clear the file upload
-    clear_btn.click(fn=clear_chat, inputs=[], outputs=[chatbot, state])
+        # State to maintain the conversation history between messages
+        state = gr.State([])
+
+        # Textbox for user input with a placeholder message
+        msg = gr.Textbox(
+            show_label=False,
+            placeholder="Type your message here and press Enter",
+            lines=2,
+            max_lines=12,
+            elem_id="msg",
+        )
+
+        # Row containing the Submit and Clear buttons
+        with gr.Row():
+            submit_btn = gr.Button("Submit")
+            clear_btn = gr.Button("Clear")
+
+        # Bind the Textbox submit action to the stream processing function and clear the textbox after submission
+        msg.submit(fn=chat_stream, inputs=[msg, state], outputs=[chatbot, state]).then(
+            clear_textbox, None, msg
+        )
+
+        # Also bind the submit button to the same functionality as the Textbox submit
+        submit_btn.click(fn=chat_stream, inputs=[msg, state], outputs=[chatbot, state]).then(
+            clear_textbox, None, msg
+        )
+
+        # Bind the clear button to reset the chat and clear the file upload
+        clear_btn.click(fn=clear_chat, inputs=[], outputs=[chatbot, state])
 
 # Launch the Gradio demo application
 demo.launch()
