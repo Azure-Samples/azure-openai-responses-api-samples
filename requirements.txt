@@ -1,5 +1,5 @@
 openai
 python-dotenv
 requests
-gradio==5.30.0
+gradio
 azure-identity
