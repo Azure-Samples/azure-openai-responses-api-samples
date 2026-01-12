@@ -1,0 +1,363 @@
+{
+  "name": "Responses-API-Bruno",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Basic Request",
+      "filename": "Basic Request.bru",
+      "seq": 1,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "examples": [],
+      "request": {
+        "url": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "name": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{ \"model\": \"{{AZURE_OPENAI_API_MODEL}}\", \"input\": \"Tell me a joke\" }",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Code Interpreter",
+      "filename": "Code Interpreter.bru",
+      "seq": 4,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "examples": [],
+      "request": {
+        "url": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "name": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n        \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n        \"tools\": [\n            { \"type\": \"code_interpreter\", \"container\": {\"type\": \"auto\"} }\n        ],\n        \"instructions\": \"You are a personal math tutor. When asked a math question, write and run code using the python tool to answer the question.\",\n        \"input\": \"I need to solve the equation 3x + 11 = 14. Can you help me?\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "MCP - Microsoft Learn",
+      "filename": "MCP - Microsoft Learn.bru",
+      "seq": 8,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "examples": [],
+      "request": {
+        "url": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "name": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n  \"tools\": [\n    {\n      \"type\": \"mcp\",\n      \"server_label\": \"MicrosoftLearn\",\n      \"server_url\": \"https://learn.microsoft.com/api/mcp\",\n      \"require_approval\": \"never\"\n    }\n  ],\n  \"input\": \"Provide a one-sentence summary of Azure AI Search, and provide a link to a Quickstart guide.\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Reasoning (Effort/Summary)",
+      "filename": "Reasoning (Effort-Summary).bru",
+      "seq": 3,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "examples": [],
+      "request": {
+        "url": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "name": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n     \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n     \"input\": \"Plan a week-long sighseeing holiday in Poland\",\n     \"reasoning\": {\"summary\": \"detailed\", \"effort\": \"medium\"},\n     \"text\": {\"verbosity\": \"medium\"}\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Stateless + Encrypted Reasoning",
+      "filename": "Stateless + Encrypted Reasoning.bru",
+      "seq": 7,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "examples": [],
+      "request": {
+        "url": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "name": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{ \n  \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n  \"input\": \"Tell me a joke\",\n  \"store\": false,\n  \"include\": [\"reasoning.encrypted_content\"]\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Structured Outputs",
+      "filename": "Structured Outputs.bru",
+      "seq": 6,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "examples": [],
+      "request": {
+        "url": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "name": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n  \"input\": [\n    { \"role\": \"system\", \"content\": \"Extract the event information.\" },\n    { \"role\": \"user\", \"content\": \"Alice and Bob are going to a science fair on Friday.\" }\n  ],\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"name\": \"CalendarEventResponse\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"name\": {\n            \"type\": \"string\"\n          },\n          \"date\": {\n            \"type\": \"string\"\n          },\n          \"participants\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"required\": [\n          \"name\",\n          \"date\",\n          \"participants\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  }\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Web Search",
+      "filename": "Web Search.bru",
+      "seq": 5,
+      "settings": {
+        "encodeUrl": true,
+        "timeout": 0
+      },
+      "tags": [],
+      "examples": [],
+      "request": {
+        "url": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          {
+            "name": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n     \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n     \"tools\": [{\"type\": \"web_search_preview\"}],\n     \"input\": \"Please perform a web search on the latest trends in renewable energy\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "activeEnvironmentUid": "jhJXAkA0cIAFa3kBT1X5N",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "AZURE_OPENAI_API_ENDPOINT",
+          "value": "https://xxxxxxxxxxx.openai.azure.com/",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "AZURE_OPENAI_V1_API_ENDPOINT",
+          "value": "https://xxxxxxxxxxx.openai.azure.com/openai/v1/",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "AZURE_OPENAI_API_MODEL",
+          "value": "gpt-5.2-chat",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "AZURE_OPENAI_API_KEY",
+          "value": "",
+          "enabled": true,
+          "secret": true,
+          "type": "text"
+        }
+      ],
+      "name": "ResponsesEnv"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Responses-API-Bruno",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.004418373107910156,
+    "filesCount": 8
+  },
+  "exportedAt": "2026-01-12T21:36:53.707Z",
+  "exportedUsing": "Bruno/3.0.2"
+}

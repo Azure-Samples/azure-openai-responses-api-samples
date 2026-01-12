@@ -1,0 +1,354 @@
+{
+  "info": {
+    "name": "Responses-API-Postman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Basic Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          },
+          {
+            "key": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+          "protocol": "",
+          "host": [
+            "{{AZURE_OPENAI_API_ENDPOINT}}"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "responses"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"model\": \"{{AZURE_OPENAI_API_MODEL}}\", \"input\": \"Tell me a joke\" }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Code Interpreter",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          },
+          {
+            "key": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+          "protocol": "",
+          "host": [
+            "{{AZURE_OPENAI_API_ENDPOINT}}"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "responses"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n        \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n        \"tools\": [\n            { \"type\": \"code_interpreter\", \"container\": {\"type\": \"auto\"} }\n        ],\n        \"instructions\": \"You are a personal math tutor. When asked a math question, write and run code using the python tool to answer the question.\",\n        \"input\": \"I need to solve the equation 3x + 11 = 14. Can you help me?\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "MCP - Microsoft Learn",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          },
+          {
+            "key": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+          "protocol": "",
+          "host": [
+            "{{AZURE_OPENAI_API_ENDPOINT}}"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "responses"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n  \"tools\": [\n    {\n      \"type\": \"mcp\",\n      \"server_label\": \"MicrosoftLearn\",\n      \"server_url\": \"https://learn.microsoft.com/api/mcp\",\n      \"require_approval\": \"never\"\n    }\n  ],\n  \"input\": \"Provide a one-sentence summary of Azure AI Search, and provide a link to a Quickstart guide.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Reasoning (Effort/Summary)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          },
+          {
+            "key": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+          "protocol": "",
+          "host": [
+            "{{AZURE_OPENAI_API_ENDPOINT}}"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "responses"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n     \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n     \"input\": \"Plan a week-long sighseeing holiday in Poland\",\n     \"reasoning\": {\"summary\": \"detailed\", \"effort\": \"medium\"},\n     \"text\": {\"verbosity\": \"medium\"}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Stateless + Encrypted Reasoning",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          },
+          {
+            "key": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+          "protocol": "",
+          "host": [
+            "{{AZURE_OPENAI_API_ENDPOINT}}"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "responses"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{ \n  \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n  \"input\": \"Tell me a joke\",\n  \"store\": false,\n  \"include\": [\"reasoning.encrypted_content\"]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Structured Outputs",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          },
+          {
+            "key": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+          "protocol": "",
+          "host": [
+            "{{AZURE_OPENAI_API_ENDPOINT}}"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "responses"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n  \"input\": [\n    { \"role\": \"system\", \"content\": \"Extract the event information.\" },\n    { \"role\": \"user\", \"content\": \"Alice and Bob are going to a science fair on Friday.\" }\n  ],\n  \"text\": {\n    \"format\": {\n      \"type\": \"json_schema\",\n      \"name\": \"CalendarEventResponse\",\n      \"schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"name\": {\n            \"type\": \"string\"\n          },\n          \"date\": {\n            \"type\": \"string\"\n          },\n          \"participants\": {\n            \"type\": \"array\",\n            \"items\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"required\": [\n          \"name\",\n          \"date\",\n          \"participants\"\n        ],\n        \"additionalProperties\": false\n      },\n      \"strict\": true\n    }\n  }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Web Search",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          },
+          {
+            "key": "api-key",
+            "value": "{{AZURE_OPENAI_API_KEY}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{AZURE_OPENAI_API_ENDPOINT}}/openai/v1/responses",
+          "protocol": "",
+          "host": [
+            "{{AZURE_OPENAI_API_ENDPOINT}}"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "responses"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n     \"model\": \"{{AZURE_OPENAI_API_MODEL}}\",\n     \"tools\": [{\"type\": \"web_search_preview\"}],\n     \"input\": \"Please perform a web search on the latest trends in renewable energy\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "AZURE_OPENAI_API_ENDPOINT",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "AZURE_OPENAI_API_KEY",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "AZURE_OPENAI_API_MODEL",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
