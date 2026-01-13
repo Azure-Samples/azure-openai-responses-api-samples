@@ -116,9 +116,13 @@ Claude models (Sonnet 4.5, Haiku 4.5, Opus 4.1) hosted in Microsoft Foundry can 
 - [The Responses API in Azure AI Foundry is now generally available](https://techcommunity.microsoft.com/blog/azure-ai-services-blog/the-responses-api-in-azure-ai-foundry-is-now-generally-available/4446567)
 - [Introducing New Tools and Features in the Responses API in Azure AI Foundry](https://devblogs.microsoft.com/foundry/introducing-new-tools-and-features-in-the-responses-api-in-azure-ai-foundry/)
 - [Announcing the Responses API and Computer-Using Agent in Azure AI Foundry](https://azure.microsoft.com/blog/announcing-the-responses-api-and-computer-using-agent-in-azure-ai-foundry/)
-- [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses)
+- [Microsoft Learn Documentation](https://aka.ms/ResponsesAPI/Docs)
 - [Azure OpenAI in Azure AI Foundry Models v1 REST API reference](https://learn.microsoft.com/azure/ai-foundry/openai/latest#create-response)
 - [OpenAI documentation](https://platform.openai.com/docs/api-reference/responses/create)
+- [OpenAI - Why we built the Responses API](https://developers.openai.com/blog/responses-api)
+- [OpenAI – Responses API reference](https://platform.openai.com/docs/api-reference/responses)
+- [OpenAI - Build Hour: Responses API](https://youtu.be/hNr5EebepYs?si=VUAwYPZKvk6P1-qV)
+
 
 ## Attribution and thanks
 Many of these examples are loosely based on [@mrbullwinkle's](https://github.com/mrbullwinkle) samples from the [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses), and also helped by the [documentation from OpenAI](https://platform.openai.com/docs/api-reference/responses/create). Thanks to [@moonbox3](https://github.com/moonbox3) for providing the Semantic Kernel and Microsoft Agent Framework samples. Thanks to Rafal Rutyna for providing useful information on the May 2025 updates.
