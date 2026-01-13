@@ -31,6 +31,11 @@ This repo includes a selection of minimal Python samples covering the most of th
 | MCP remote server with Gradio UI                                                            | n/a                                                                                                                                             | [responses-mcp-mslearn-gradio-aoai-v1.py](python/responses-mcp-mslearn-gradio-aoai-v1.py)                                                                         |
 | Gradio-based chatbot with conversation history, image upload, Reasoning Summary | [responses-chat-stream-gradio.py](python/responses-chat-stream-gradio.py)                                                                              | [responses-chat-stream-gradio-v1.py](python/responses-chat-stream-gradio-v1.py)                                                                   |
 
+| 🎥 Python SDK demo video |
+|---|
+| [![Watch the demo](https://img.youtube.com/vi/MEjP7TicvWg/hqdefault.jpg)](https://youtu.be/MEjP7TicvWg) |
+| [Watch on YouTube ↗](https://youtu.be/MEjP7TicvWg) |
+
 [//]: # (Codespaces section inserted below)
 ## Quick Start with GitHub Codespaces
 
@@ -83,6 +88,11 @@ The following REST API samples are provided as importable collections in [Postma
 - Structured Outputs
 - Web Search
 
+| 🎥 REST API demo video |
+|---|
+| [![Watch the demo](https://img.youtube.com/vi/yywm4MEyuAY/hqdefault.jpg)](https://youtu.be/yywm4MEyuAY) |
+| [Watch on YouTube ↗](https://youtu.be/yywm4MEyuAY) |
+
 ## Recommended settings
 
 If you're coming to this for the first time, and want some suggestions for the most compatible/simplest way to try out the latest features, try the following:
@@ -94,7 +104,9 @@ If you're coming to this for the first time, and want some suggestions for the m
 - If using the "Legacy" API version: 2025-04-01-preview
 - OpenAI library (latest stable release)
 
+<!--
 [![Reasoning Summary](https://github.com/user-attachments/assets/9e1ab1b8-8c3d-4ccf-911e-3c7711abe947)](python/responses-chat-stream-gradio.py)
+-->
 <!--
 ## Use Claude Models with OpenAI Responses API in Microsoft Foundry
 
