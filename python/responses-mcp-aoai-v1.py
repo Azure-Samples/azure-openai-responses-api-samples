@@ -20,7 +20,7 @@ response = client.responses.create(
             "require_approval": "never",
         },
     ],
-    input="Provide a one-sentence summary of Azure AI Search, and provide a link to a Quickstart guide.",
+    input="Provide a one-sentence summary of the Microsoft Agent Framework, and provide a link to a Quickstart guide.",
 )
 
 print(response.output_text)
