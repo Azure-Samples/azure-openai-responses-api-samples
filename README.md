@@ -71,6 +71,18 @@ The AI Projects client library is part of the Microsoft Foundry SDK, and support
 [Foundry SDK Overview](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-projects-readme?view=azure-python-preview) [Samples](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples/responses)
 
 
+## REST API samples
+
+The following REST API samples are provided as importable collections in [Postman](rest/Responses-API-Postman.json) and [Bruno](Responses-API-Bruno.json) formats:
+
+- Basic Request
+- Code Interpreter
+- MCP - Microsoft Learn
+- Reasoning (Effort/Summary)
+- Stateless + Encrypted Reasoning
+- Structured Outputs
+- Web Search
+
 ## Recommended settings
 
 If you're coming to this for the first time, and want some suggestions for the most compatible/simplest way to try out the latest features, try the following:
