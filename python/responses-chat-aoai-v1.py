@@ -1,30 +1,20 @@
-import os
-from openai import OpenAI
+from os import environ
 from dotenv import load_dotenv
+from openai import OpenAI
 
 load_dotenv()
 
 client = OpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-    base_url=os.getenv("AZURE_OPENAI_V1_API_ENDPOINT"),
+    api_key=environ["AZURE_OPENAI_API_KEY"],
+    base_url=environ["AZURE_OPENAI_V1_API_ENDPOINT"],
 )
+model, prev_id = environ["AZURE_OPENAI_API_MODEL"], None
 
-previous_response_id = None
-
-while True:
-    user_input = input("Enter your message (or type 'exit' to quit): ").strip()
-    if user_input.lower() == "exit":
-        break
-
-    params = {
-        "model": os.environ["AZURE_OPENAI_API_MODEL"],
-        "input": [{"role": "user", "content": user_input}]
-    }
-    
-    if previous_response_id:
-        params["previous_response_id"] = previous_response_id
-    
-    response = client.responses.create(**params)
-
+while (msg := input("Enter your message ('exit' to quit): ").strip()).lower() != "exit":
+    response = client.responses.create(
+        model=model,
+        input=[{"role": "user", "content": msg}],
+        **({"previous_response_id": prev_id} if prev_id else {}),
+    )
     print(response.output_text)
-    previous_response_id = response.id
+    prev_id = response.id
