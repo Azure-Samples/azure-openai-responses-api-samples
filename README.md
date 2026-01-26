@@ -30,10 +30,10 @@ This repo includes a selection of minimal Python samples covering the most of th
 | MCP remote server with Gradio UI                                                            | n/a                                                                                                                                             | [responses-mcp-mslearn-gradio-aoai-v1.py](python/responses-mcp-mslearn-gradio-aoai-v1.py)                                                                         |
 | Gradio-based chatbot with conversation history, image upload, Reasoning Summary | [responses-chat-stream-gradio.py](python/responses-chat-stream-gradio.py)                                                                              | [responses-chat-stream-gradio-v1.py](python/responses-chat-stream-gradio-v1.py)                                                                   |
 
-| 🎥 Python SDK demo video |
+| 🎥 Model Mondays - Code-First with Responses API |
 |---|
-| [![Watch the demo](https://img.youtube.com/vi/MEjP7TicvWg/hqdefault.jpg)](https://youtu.be/MEjP7TicvWg) |
-| [Watch on YouTube ↗](https://youtu.be/MEjP7TicvWg) |
+| [![Watch the demo](https://img.youtube.com/vi/vsSleri3RPo/hqdefault.jpg)](https://www.youtube.com/live/vsSleri3RPo?t=149s) |
+| [Watch on YouTube ↗](https://www.youtube.com/live/vsSleri3RPo?t=149s) |
 
 [//]: # (Codespaces section inserted below)
 ## Quick Start with GitHub Codespaces
