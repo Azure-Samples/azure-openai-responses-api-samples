@@ -1,0 +1,14 @@
+name: Path safety (Windows)
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  windows-path-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for invalid Windows paths
+        run: python3 scripts/check_windows_paths.py
