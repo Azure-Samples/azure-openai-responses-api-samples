@@ -2,6 +2,14 @@ import os
 from openai import OpenAI
 import gradio as gr
 from dotenv import load_dotenv
+from sample_env import (
+    get_azure_openai_api_key,
+    get_azure_openai_api_version,
+    get_azure_openai_endpoint,
+    get_azure_openai_deployment_name,
+    get_azure_openai_v1_base_url,
+)
+
 
 # Load configuration settings from a .env file
 load_dotenv()
@@ -10,10 +18,10 @@ load_dotenv()
 demo_title = ""
 
 # Set up the Azure OpenAI client and deployment
-deployment = os.environ["AZURE_OPENAI_API_MODEL"]
+deployment = get_azure_openai_deployment_name()
 client = OpenAI(
-    api_key=os.environ["AZURE_OPENAI_API_KEY"],
-    base_url=os.environ["AZURE_OPENAI_API_ENDPOINT"].rstrip("/") + "/openai/v1/",
+    api_key=get_azure_openai_api_key(),
+    base_url=get_azure_openai_endpoint().rstrip("/") + "/openai/v1/",
 )
 
 # Global variable to store the response identifier from the last API call

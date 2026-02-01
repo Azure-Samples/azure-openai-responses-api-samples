@@ -1,5 +1,13 @@
 from openai import AzureOpenAI
 from dotenv import load_dotenv
+from sample_env import (
+    get_azure_openai_api_key,
+    get_azure_openai_api_version,
+    get_azure_openai_endpoint,
+    get_azure_openai_deployment_name,
+    get_azure_openai_v1_base_url,
+)
+
 import os
 import base64
 
@@ -8,9 +16,9 @@ load_dotenv()
 IMAGE_PATH = "../assets/book.jpeg"
 
 client = AzureOpenAI(
-    api_key = os.environ["AZURE_OPENAI_API_KEY"],  
-    api_version = os.environ["AZURE_OPENAI_API_VERSION"],
-    azure_endpoint = os.environ["AZURE_OPENAI_API_ENDPOINT"]
+    api_key = get_azure_openai_api_key(),  
+    api_version = get_azure_openai_api_version(),
+    azure_endpoint = get_azure_openai_endpoint()
     )
 
 def encode_image(image_path):
@@ -20,7 +28,7 @@ def encode_image(image_path):
 base64_image = encode_image(IMAGE_PATH)
 
 response = client.responses.create(
-    model=os.environ["AZURE_OPENAI_API_MODEL"],
+    model=get_azure_openai_deployment_name(),
     input=[
         {"role": "user", "content": "Identify the bird on the front of this book cover."},
         {

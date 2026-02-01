@@ -44,6 +44,8 @@ The quickest way to get started is using GitHub Codespaces, a hosted environment
 
 Wait for the Codespace to initialize. Python 3.12, Python extension, and dependencies will be automatically installed. For an even more streamlined experience, add the environment variables into your [Codespace user secrets](https://github.com/settings/codespaces).
 
+You can use this repo's **.env.example** as a starting point (aligned with Microsoft Agent Framework). Most Python samples load environment variables automatically via `python-dotenv`.
+
 ## Why are there two sets of samples? Which API version should I use?
 Starting in May 2025, you use the next generation v1 APIs which adds support for:
 - Ongoing access to the latest features with no need to update api-version each month.

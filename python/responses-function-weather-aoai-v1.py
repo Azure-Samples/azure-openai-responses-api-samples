@@ -3,6 +3,14 @@ import json
 import requests
 from openai import OpenAI
 from dotenv import load_dotenv
+from sample_env import (
+    get_azure_openai_api_key,
+    get_azure_openai_api_version,
+    get_azure_openai_endpoint,
+    get_azure_openai_deployment_name,
+    get_azure_openai_v1_base_url,
+)
+
 load_dotenv()
 
 def get_weather(latitude: float, longitude: float) -> str:
@@ -22,8 +30,8 @@ def get_weather(latitude: float, longitude: float) -> str:
     return f"Current temperature is {temp}°C with wind {wind} m/s." if temp is not None else "Weather data unavailable."
 
 client = OpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-    base_url=os.getenv("AZURE_OPENAI_V1_API_ENDPOINT"),
+    api_key=get_azure_openai_api_key(),
+    base_url=get_azure_openai_v1_base_url(),
 )
 
 tools = [
@@ -49,7 +57,7 @@ conversation = [
 
 # First model call – model decides whether to call the tool
 resp1 = client.responses.create(
-    model=os.getenv("AZURE_OPENAI_API_MODEL"),
+    model=get_azure_openai_deployment_name(),
     tools=tools,
     input=conversation,
 )
@@ -70,7 +78,7 @@ for item in resp1.output:
 
 # Second model call – model incorporates tool output and answers user
 final_resp = client.responses.create(
-    model=os.getenv("AZURE_OPENAI_API_MODEL"),
+    model=get_azure_openai_deployment_name(),
     tools=tools,
     instructions="Answer using the weather tool output only; be concise.",
     input=conversation,
