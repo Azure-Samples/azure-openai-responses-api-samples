@@ -61,7 +61,7 @@ If you need to use the older API versions, you can use the legacy samples. At ti
 ## Microsoft Agent Framework
 [Microsoft Agent Framework](https://aka.ms/agentframework) has supported Responses API for both Azure OpenAI and OpenAI since the initial public preview on 1st October 2025 (version 1.0.0b251001). The following Azure OpenAI samples provide code for image analysis, function calling, conversation threads, and code interpreter.
 
-[Azure OpenAI Agent Examples](https://github.com/microsoft/agent-framework/tree/main/python/samples/getting_started/agents/azure_openai)
+[Azure OpenAI Agent Examples](https://github.com/microsoft/agent-framework/tree/main/python/samples/02-agents/providers/azure_openai)
 
 
  ## Semantic Kernel
