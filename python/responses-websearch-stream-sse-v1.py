@@ -10,8 +10,8 @@ client = OpenAI(
 
 stream = client.responses.create(
     model= os.environ["AZURE_OPENAI_API_MODEL"],
-    tools=[{"type": "web_search_preview"}],
-    input="Give me a positive news story from the web today",
+    tools=[{"type": "web_search"}],
+    input="Who won the most recent Formula 1 race?",
     stream=True,
 )
 

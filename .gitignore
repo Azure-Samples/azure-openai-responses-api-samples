@@ -5,6 +5,9 @@ __pycache__/
 
 # Environment files
 .env
+.env.southcentralus
+.env.centralus
+.env.sweden
 
 # Virtual environments
 venv/
