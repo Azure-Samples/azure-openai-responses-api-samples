@@ -59,6 +59,9 @@ If you need to use the older API versions, you can use the legacy samples. At ti
 [Azure OpenAI in Foundry Models API lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-lifecycle?tabs=key#api-evolution)
 
 
+## Migrate to Responses API from Chat Completions
+If you're currently using the Chat Completions API with the `AzureOpenAI` client and want to migrate your Python apps to the Responses API, the [azure-openai-to-responses](https://github.com/Azure-Samples/azure-openai-to-responses) repo provides a migration skill and tooling to help automate the process. It supports popular AI coding agents including GitHub Copilot, Claude Code, and Cursor, and includes a scanner to identify legacy patterns across your codebase. Migrating to the Responses API future-proofs your apps by unlocking deep tool integration, structured outputs, and the stable `/openai/v1/` endpoint with no `api_version` management.
+
 ## Microsoft Agent Framework
 [Microsoft Agent Framework](https://aka.ms/agentframework) has supported Responses API for both Azure OpenAI and OpenAI since the initial public preview on 1st October 2025 (version 1.0.0b251001). The following Azure OpenAI samples provide code for image analysis, function calling, conversation threads, and code interpreter.
 
@@ -76,6 +79,9 @@ The AI Projects client library is part of the Microsoft Foundry SDK, and support
 
 [Foundry SDK Overview](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-projects-readme?view=azure-python-preview) [Samples](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/ai/azure-ai-projects/samples/responses)
 
+
+## Model Router samples
+[Foundry Model Router](https://github.com/microsoft-foundry/foundry-samples/tree/main/samples/python/foundry-models/model-router) is a deployable AI chat model in Azure AI Foundry that automatically selects the best underlying LLM for each prompt in real time, delivering high performance and cost savings from a single deployment. The linked samples demonstrate how to use Model Router with both the Chat Completions API and the Foundry SDK Responses API, so you can integrate intelligent routing into your applications with minimal code changes.
 
 ## REST API samples
 
@@ -125,4 +131,4 @@ Claude models (Sonnet 4.5, Haiku 4.5, Opus 4.1) hosted in Microsoft Foundry can 
 
 
 ## Attribution and thanks
-Many of these examples are loosely based on [@mrbullwinkle's](https://github.com/mrbullwinkle) samples from the [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses), and also helped by the [documentation from OpenAI](https://platform.openai.com/docs/api-reference/responses/create). Thanks to [@moonbox3](https://github.com/moonbox3) for providing the Semantic Kernel and Microsoft Agent Framework samples. Thanks to Rafal Rutyna for providing useful information on the May 2025 updates.
+Many of these examples are loosely based on [@mrbullwinkle's](https://github.com/mrbullwinkle) samples from the [Microsoft Learn Documentation](https://learn.microsoft.com/azure/ai-services/openai/how-to/responses), and also helped by the [documentation from OpenAI](https://platform.openai.com/docs/api-reference/responses/create). Thanks to [@moonbox3](https://github.com/moonbox3) for providing the Semantic Kernel and Microsoft Agent Framework samples. Thanks to Rafal Rutyna for providing useful information on the May 2025 updates. Thanks to Arun Sekhar and Pamela Fox for the Migrate to Responses API from Chat Completions samples. Thanks to Sanjeev Jagtap for the Model Router samples.
