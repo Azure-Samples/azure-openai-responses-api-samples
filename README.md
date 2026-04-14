@@ -81,7 +81,9 @@ The AI Projects client library is part of the Microsoft Foundry SDK, and support
 
 
 ## Model Router samples
-[Foundry Model Router](https://github.com/microsoft-foundry/foundry-samples/tree/main/samples/python/foundry-models/model-router) is a deployable AI chat model in Microsoft Foundry that automatically selects the best underlying LLM for each prompt in real time, delivering high performance and cost savings from a single deployment. The linked samples demonstrate how to use Model Router using the Foundry SDK Responses API, so you can integrate intelligent routing into your applications with minimal code changes.
+[Model Router](https://learn.microsoft.com/azure/foundry/openai/concepts/model-router) is a deployable AI chat model in Microsoft Foundry that automatically selects the best underlying LLM for each prompt in real time, delivering high performance and cost savings from a single deployment. The linked samples demonstrate how to use Model Router using the Foundry SDK Responses API, so you can integrate intelligent routing into your applications with minimal code changes.
+
+[Model Router Foundry SDK Responses Samples](https://github.com/microsoft-foundry/foundry-samples/tree/main/samples/python/foundry-models/model-router)
 
 ## REST API samples
 
