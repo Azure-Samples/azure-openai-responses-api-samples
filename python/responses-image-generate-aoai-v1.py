@@ -5,14 +5,14 @@ import os
 
 load_dotenv()
 
-client = OpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-    base_url=os.getenv("AZURE_OPENAI_V1_API_ENDPOINT"),
-    default_headers={"x-ms-oai-image-generation-deployment":"gpt-image-1.5"}
+client = OpenAI(  
+  base_url = os.getenv("AZURE_OPENAI_V1_API_ENDPOINT"),  
+  api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+  default_headers={"x-ms-oai-image-generation-deployment":"gpt-image-2", "api_version":"preview"}
 )
 
 response = client.responses.create(
-    model="gpt-4.1",
+    model="gpt-5-mini",
     input="Generate an image of gray tabby cat hugging an otter with an orange scarf",
     tools=[{"type": "image_generation"}],
 )
