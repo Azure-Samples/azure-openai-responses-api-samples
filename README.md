@@ -31,6 +31,7 @@ This repo includes a selection of minimal Python samples covering the most of th
 | MCP remote server with Gradio UI                                                            | n/a                                                                                                                                             | [responses-mcp-mslearn-gradio-aoai-v1.py](python/responses-mcp-mslearn-gradio-aoai-v1.py)                                                                         |
 | Gradio-based chatbot with conversation history, image upload, Reasoning Summary | [responses-chat-stream-gradio.py](python/responses-chat-stream-gradio.py)                                                                              | [responses-chat-stream-gradio-v1.py](python/responses-chat-stream-gradio-v1.py)                                                                   |
 | Batch API with Web Search | n/a                                                                            | [BatchWebSearch](https://github.com/guygregory/BatchWebSearch)                                                                   |
+| WebSockets mode (notebook)                                                      | n/a                                                                                                                                             | [responses-websockets-aoai-v1.ipynb](python/responses-websockets-aoai-v1.ipynb)                                                                   |
 
 | 🎥 Model Mondays - Code-First with Responses API |
 |---|

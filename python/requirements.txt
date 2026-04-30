@@ -3,3 +3,4 @@ python-dotenv
 requests
 gradio
 azure-identity
+websocket-client
