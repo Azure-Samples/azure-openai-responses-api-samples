@@ -3,4 +3,5 @@ python-dotenv
 requests
 gradio
 azure-identity
+azure-keyvault-secrets
 websocket-client
